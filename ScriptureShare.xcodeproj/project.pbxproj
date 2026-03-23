@@ -20,6 +20,7 @@
 		65694734998E8C2C83E0989A /* DirectEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621952E11CCCCE1FC9FE644 /* DirectEntryView.swift */; };
 		65DA204CDF5F3A6CE37E34D6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C886D1767618125F86AF0F4E /* SettingsView.swift */; };
 		680F86EA061BCF9355364EAB /* VerseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384C9606613EFB19875F94D /* VerseParser.swift */; };
+		689941A3F483B885305561DA /* SS02VerseParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C01C32852EA16FD1ECA6AE /* SS02VerseParserTests.swift */; };
 		695844A9174FE1AB5C1126B9 /* VerseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384C9606613EFB19875F94D /* VerseParser.swift */; };
 		7AB6AD0E09C931226452EF9A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 173A83292B2F29D931F7214A /* libsqlite3.tbd */; };
 		7F914C998DF6832D45987CAA /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C16F6E2B6185DC20185DE2 /* Book.swift */; };
@@ -90,6 +91,7 @@
 		9EAE3A2704C7F8DC6C5C86F2 /* ScriptureShareTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ScriptureShareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C16F6E2B6185DC20185DE2 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		C55A92DA1D43061701A1B4F5 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
+		C6C01C32852EA16FD1ECA6AE /* SS02VerseParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SS02VerseParserTests.swift; sourceTree = "<group>"; };
 		C886D1767618125F86AF0F4E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CAC1C26166780E34EB6BD78B /* kjv.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = kjv.sqlite; sourceTree = "<group>"; };
 		D95352D2CC6E8E519B94C2FF /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				F4151EB7E60C8C14FE9DBB00 /* BibleDatabaseTests.swift */,
+				C6C01C32852EA16FD1ECA6AE /* SS02VerseParserTests.swift */,
 			);
 			path = ScriptureShareTests;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99A92C0B6464EA985A3EBF1F /* BibleDatabaseTests.swift in Sources */,
+				689941A3F483B885305561DA /* SS02VerseParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

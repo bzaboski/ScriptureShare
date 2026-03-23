@@ -79,6 +79,26 @@ public final class BibleDatabase {
         return sqlite3_step(stmt) == SQLITE_ROW ? Int(sqlite3_column_int(stmt, 0)) : 0
     }
 
+    // MARK: - Verse Range Lookup
+
+    /// Returns verses for a chapter range from `from` to `through` (inclusive).
+    public func verses(bookName: String, chapter: Int, from startVerse: Int, through endVerse: Int) -> [Verse] {
+        let sql = """
+            SELECT v.id, v.number, v.text, c.number, b.name
+            FROM verses v
+            JOIN chapters c ON v.chapter_id = c.id
+            JOIN books b ON c.book_id = b.id
+            WHERE lower(b.name) = lower(?) AND c.number = ? AND v.number >= ? AND v.number <= ?
+            ORDER BY v.number
+            """
+        return queryVerses(sql: sql, bind: { stmt in
+            sqlite3_bind_text(stmt, 1, bookName, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_int(stmt, 2, Int32(chapter))
+            sqlite3_bind_int(stmt, 3, Int32(startVerse))
+            sqlite3_bind_int(stmt, 4, Int32(endVerse))
+        })
+    }
+
     // MARK: - Verses in Chapter
 
     public func verses(bookName: String, chapter: Int) -> [Verse] {
