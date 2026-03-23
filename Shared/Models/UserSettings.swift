@@ -16,6 +16,15 @@ public final class UserSettings {
         let config = ModelConfiguration(
             groupContainer: .identifier("group.com.bzaboski.scriptureshare")
         )
-        return try! ModelContainer(for: schema, configurations: config)
+        do {
+            return try ModelContainer(for: schema, configurations: config)
+        } catch {
+            // Fallback: in-memory container (e.g., simulator without entitlements)
+            let fallbackConfig = ModelConfiguration(isStoredInMemoryOnly: true)
+            return try! ModelContainer(for: schema, configurations: fallbackConfig)
+        }
     }()
+
+    /// All available translations. Add new ones here as they become licensed.
+    public static let availableTranslations: [String] = ["KJV"]
 }

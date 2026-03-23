@@ -13,6 +13,7 @@
 		10A91201B7B2DF51C7D4A58E /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A92DA1D43061701A1B4F5 /* Verse.swift */; };
 		3101BC8AAF0BADBDAFC57F45 /* BibleDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF7E245BFA3399CAD98F43 /* BibleDatabase.swift */; };
 		448EF6E1BDC11E1B15BC840C /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B78CFAC5C11167BD35D38A /* BrowseView.swift */; };
+		4FEDC98D00E77FB9D1B4DF3A /* TranslationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4BF635182FC6381F98DFD /* TranslationPickerView.swift */; };
 		580A8DAE5356F3D4A41C82B9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 173A83292B2F29D931F7214A /* libsqlite3.tbd */; };
 		5C6B07B86F678C1B073F0CED /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A77A7E1C44B6820A539C2 /* SearchView.swift */; };
 		5DF789D2EC3F5BD3BB7B2EFA /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E0EF58FEBFC9274896045 /* SearchService.swift */; };
@@ -23,6 +24,7 @@
 		689941A3F483B885305561DA /* SS02VerseParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C01C32852EA16FD1ECA6AE /* SS02VerseParserTests.swift */; };
 		695844A9174FE1AB5C1126B9 /* VerseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384C9606613EFB19875F94D /* VerseParser.swift */; };
 		7AB6AD0E09C931226452EF9A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 173A83292B2F29D931F7214A /* libsqlite3.tbd */; };
+		7ACF230A087FB33A03D5C497 /* TranslationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4BF635182FC6381F98DFD /* TranslationPickerView.swift */; };
 		7F914C998DF6832D45987CAA /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C16F6E2B6185DC20185DE2 /* Book.swift */; };
 		8152250E76B07463369359B4 /* kjv.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CAC1C26166780E34EB6BD78B /* kjv.sqlite */; };
 		98022DB92A6A74AA38D0CF41 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C16F6E2B6185DC20185DE2 /* Book.swift */; };
@@ -96,6 +98,7 @@
 		C6C01C32852EA16FD1ECA6AE /* SS02VerseParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SS02VerseParserTests.swift; sourceTree = "<group>"; };
 		C886D1767618125F86AF0F4E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CAC1C26166780E34EB6BD78B /* kjv.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = kjv.sqlite; sourceTree = "<group>"; };
+		D5F4BF635182FC6381F98DFD /* TranslationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationPickerView.swift; sourceTree = "<group>"; };
 		D95352D2CC6E8E519B94C2FF /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		E6B78CFAC5C11167BD35D38A /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 		EAB4447E677E125EAB62FFB0 /* ScriptureShare.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ScriptureShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +134,14 @@
 				35DABBB20028A8CFA040FDA0 /* Messages.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C4482A8EBE48096D5BAA28F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5F4BF635182FC6381F98DFD /* TranslationPickerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2A63127B45F985543433CEFC /* Resources */ = {
@@ -199,6 +210,7 @@
 				AD3F9E10D12B8E1B94104033 /* Models */,
 				2A63127B45F985543433CEFC /* Resources */,
 				4063FAEC0852EA9433C7E177 /* Services */,
+				1C4482A8EBE48096D5BAA28F /* Views */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -386,6 +398,7 @@
 				F9B5868FB74F317781C6364C /* ScriptureShareApp.swift in Sources */,
 				5DF789D2EC3F5BD3BB7B2EFA /* SearchService.swift in Sources */,
 				65DA204CDF5F3A6CE37E34D6 /* SettingsView.swift in Sources */,
+				7ACF230A087FB33A03D5C497 /* TranslationPickerView.swift in Sources */,
 				0633F8186FCBD3224391A68D /* UserSettings.swift in Sources */,
 				D2297D34028E9B8536C00AC3 /* Verse.swift in Sources */,
 				695844A9174FE1AB5C1126B9 /* VerseParser.swift in Sources */,
@@ -406,6 +419,7 @@
 				CE570BBC641B17EA13B049DA /* RecentsView.swift in Sources */,
 				DAD0E642E1D6A881F72C6C26 /* SearchService.swift in Sources */,
 				5C6B07B86F678C1B073F0CED /* SearchView.swift in Sources */,
+				4FEDC98D00E77FB9D1B4DF3A /* TranslationPickerView.swift in Sources */,
 				03E9EF5EA59A6527F66E4E28 /* UserSettings.swift in Sources */,
 				10A91201B7B2DF51C7D4A58E /* Verse.swift in Sources */,
 				680F86EA061BCF9355364EAB /* VerseParser.swift in Sources */,

@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 /// Root view for the iMessage extension with tab navigation.
 struct MainTabView: View {
@@ -10,6 +11,11 @@ struct MainTabView: View {
         TabView(selection: $selectedTab) {
             NavigationStack {
                 BrowseView(onSelectVerse: onInsertVerse)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            TranslationBadge()
+                        }
+                    }
             }
             .tabItem {
                 Label("Browse", systemImage: "books.vertical")
@@ -18,6 +24,11 @@ struct MainTabView: View {
 
             NavigationStack {
                 DirectEntryView(onSelectVerse: onInsertVerse)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            TranslationBadge()
+                        }
+                    }
             }
             .tabItem {
                 Label("Enter", systemImage: "character.cursor.ibeam")
@@ -26,6 +37,11 @@ struct MainTabView: View {
 
             NavigationStack {
                 SearchView(onSelectVerse: onInsertVerse)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            TranslationBadge()
+                        }
+                    }
             }
             .tabItem {
                 Label("Search", systemImage: "magnifyingglass")
@@ -34,11 +50,17 @@ struct MainTabView: View {
 
             NavigationStack {
                 RecentsView(onSelectVerse: onInsertVerse)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            TranslationBadge()
+                        }
+                    }
             }
             .tabItem {
                 Label("Recents", systemImage: "clock")
             }
             .tag(3)
         }
+        .modelContainer(UserSettings.sharedModelContainer)
     }
 }
