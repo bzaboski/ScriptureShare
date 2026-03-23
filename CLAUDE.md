@@ -107,7 +107,7 @@ See `scripture_share_feature_cards.docx` for full acceptance criteria and Claude
 | SS-03 | Browse Mode UI (Book → Chapter → Verse) | ✅ Done | feat/SS-03-browse-mode-ui |
 | SS-04 | Direct Entry Mode + Autocomplete | ✅ Done | feat/SS-04-direct-entry-autocomplete |
 | SS-05 | Translation Selector + User Default | ✅ Done | feat/SS-05-translation-selector |
-| SS-06 | Message Composition + iMessage Insert | Not Started | — |
+| SS-06 | Message Composition + iMessage Insert | ✅ Done | feat/SS-06-message-composition |
 | SS-07 | Recents List | Not Started | — |
 | SS-08 | Keyword Search (FTS5) | Not Started | — |
 | SS-09 | Host App (Onboarding + Settings) | Not Started | — |
