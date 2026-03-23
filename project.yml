@@ -1,0 +1,72 @@
+name: ScriptureShare
+options:
+  bundleIdPrefix: com.bzaboski
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  xcodeVersion: "16.2"
+
+settings:
+  base:
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    SWIFT_VERSION: "5.9"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    TARGETED_DEVICE_FAMILY: "1,2"
+
+targets:
+  ScriptureShare:
+    type: application
+    platform: iOS
+    sources:
+      - path: ScriptureShare
+        excludes:
+          - "**/*.entitlements"
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.bzaboski.scriptureshare
+        INFOPLIST_FILE: ScriptureShare/Info.plist
+    entitlements:
+      path: ScriptureShare/ScriptureShare.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.bzaboski.scriptureshare
+    dependencies:
+      - target: ScriptureShareMessages
+        embed: true
+        link: false
+      - sdk: libsqlite3.tbd
+
+  ScriptureShareMessages:
+    type: "com.apple.product-type.app-extension.messages"
+    platform: iOS
+    sources:
+      - path: ScriptureShareMessages
+        excludes:
+          - "**/*.entitlements"
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.bzaboski.scriptureshare.messages
+        INFOPLIST_FILE: ScriptureShareMessages/Info.plist
+    entitlements:
+      path: ScriptureShareMessages/ScriptureShareMessages.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.bzaboski.scriptureshare
+    dependencies:
+      - sdk: libsqlite3.tbd
+      - sdk: Messages.framework
+
+  ScriptureShareTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: ScriptureShareTests
+      - path: Shared/Resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.bzaboski.scriptureshare.tests
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: ScriptureShare
