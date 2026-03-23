@@ -44,6 +44,7 @@
 		DAD0E642E1D6A881F72C6C26 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E0EF58FEBFC9274896045 /* SearchService.swift */; };
 		E7D2956DB1B502E3782451D4 /* ScriptureShareMessages.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 97215A532CD088FD02347EAA /* ScriptureShareMessages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EAFC5C14A22493783153F400 /* VerseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233679B1E35AF70A8184B299 /* VerseReference.swift */; };
+		ED4C3A34E285F3135CE0D192 /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5785DDFB5E74D74359A97D12 /* MainAppView.swift */; };
 		F48BD61ECC416B27BCAE845E /* kjv.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CAC1C26166780E34EB6BD78B /* kjv.sqlite */; };
 		F9B5868FB74F317781C6364C /* ScriptureShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647B24C0EDA2762902A595B /* ScriptureShareApp.swift */; };
 		FEDC0F789DD1060C1088CF1A /* RecentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DED4E034C29EF436BD00449 /* RecentsService.swift */; };
@@ -94,6 +95,7 @@
 		4D3E0EF58FEBFC9274896045 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		5384C9606613EFB19875F94D /* VerseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseParser.swift; sourceTree = "<group>"; };
 		54627CD5A519F4605C08683C /* VersePreviewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersePreviewCard.swift; sourceTree = "<group>"; };
+		5785DDFB5E74D74359A97D12 /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		684A77A7E1C44B6820A539C2 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		6C4732267D73EDF52DFBC1CD /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		6DED4E034C29EF436BD00449 /* RecentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsService.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		6985CE2807649F20D91B5F6C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5785DDFB5E74D74359A97D12 /* MainAppView.swift */,
 				34D1FCE2505685E73B054FB7 /* OnboardingView.swift */,
 				C886D1767618125F86AF0F4E /* SettingsView.swift */,
 			);
@@ -410,6 +413,7 @@
 			files = (
 				3101BC8AAF0BADBDAFC57F45 /* BibleDatabase.swift in Sources */,
 				98022DB92A6A74AA38D0CF41 /* Book.swift in Sources */,
+				ED4C3A34E285F3135CE0D192 /* MainAppView.swift in Sources */,
 				D1B4FC9D1FC2646B1D7D7B53 /* OnboardingView.swift in Sources */,
 				FEDC0F789DD1060C1088CF1A /* RecentsService.swift in Sources */,
 				F9B5868FB74F317781C6364C /* ScriptureShareApp.swift in Sources */,
