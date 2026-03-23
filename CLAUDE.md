@@ -102,8 +102,8 @@ See `scripture_share_feature_cards.docx` for full acceptance criteria and Claude
 
 | Card | Feature | Status | Branch |
 |------|---------|--------|--------|
-| SS-01 | Project Scaffold + KJV Database Bundle | Not Started | — |
-| SS-02 | Verse Lookup Layer + Reference Parser | Not Started | — |
+| SS-01 | Project Scaffold + KJV Database Bundle | ✅ Done | feat/SS-01-project-scaffold |
+| SS-02 | Verse Lookup Layer + Reference Parser | ✅ Done | feat/SS-02-verse-lookup-reference-parser |
 | SS-03 | Browse Mode UI (Book → Chapter → Verse) | Not Started | — |
 | SS-04 | Direct Entry Mode + Autocomplete | Not Started | — |
 | SS-05 | Translation Selector + User Default | Not Started | — |
