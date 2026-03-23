@@ -4,6 +4,8 @@ import SwiftUI
 
 class MessagesViewController: MSMessagesAppViewController {
 
+    private var hostVC: UIHostingController<AnyView>?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         showMainInterface()
@@ -23,10 +25,17 @@ class MessagesViewController: MSMessagesAppViewController {
 
     private func showMainInterface() {
         requestPresentationStyle(.expanded)
-        let searchView = SearchView(onSelectVerse: { [weak self] verse in
-            self?.insert(verse: verse)
+
+        // Remove existing host view controller if any
+        hostVC?.willMove(toParent: nil)
+        hostVC?.view.removeFromSuperview()
+        hostVC?.removeFromParent()
+
+        let mainView = MainTabView(onInsertVerse: { [weak self] verse in
+            self?.insertText(verse: verse)
         })
-        let host = UIHostingController(rootView: searchView)
+        let host = UIHostingController(rootView: AnyView(mainView))
+        hostVC = host
         addChild(host)
         host.view.frame = view.bounds
         host.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -34,12 +43,8 @@ class MessagesViewController: MSMessagesAppViewController {
         host.didMove(toParent: self)
     }
 
-    private func insert(verse: Verse) {
-        guard let conversation = activeConversation else { return }
-        let layout = MSMessageTemplateLayout()
-        layout.caption = verse.formattedForSharing
-        let message = MSMessage()
-        message.layout = layout
-        conversation.insert(message) { _ in }
+    /// Insert verse as plain text into the conversation.
+    func insertText(verse: Verse) {
+        activeConversation?.insertText(verse.formattedForSharing) { _ in }
     }
 }
