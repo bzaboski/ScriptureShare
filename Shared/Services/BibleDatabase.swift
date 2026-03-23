@@ -130,7 +130,14 @@ public final class BibleDatabase {
             ORDER BY rank
             LIMIT ?
             """
-        let ftsQuery = query.trimmingCharacters(in: .whitespaces) + "*"
+        // Build an FTS5 query: each word gets a prefix wildcard for partial matching.
+        // Single token: "grace*", multi-token: "love* is* patient*"
+        let trimmed = query.trimmingCharacters(in: .whitespaces)
+        let ftsQuery = trimmed
+            .components(separatedBy: .whitespaces)
+            .filter { !$0.isEmpty }
+            .map { $0 + "*" }
+            .joined(separator: " ")
         return queryVerses(sql: sql, bind: { stmt in
             sqlite3_bind_text(stmt, 1, ftsQuery, -1, SQLITE_TRANSIENT)
             sqlite3_bind_int(stmt, 2, Int32(limit))
