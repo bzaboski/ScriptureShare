@@ -110,7 +110,7 @@ See `scripture_share_feature_cards.docx` for full acceptance criteria and Claude
 | SS-06 | Message Composition + iMessage Insert | ✅ Done | feat/SS-06-message-composition |
 | SS-07 | Recents List | ✅ Done | feat/SS-07-recents-list |
 | SS-08 | Keyword Search (FTS5) | ✅ Done | feat/SS-08-keyword-search |
-| SS-09 | Host App (Onboarding + Settings) | Not Started | — |
+| SS-09 | Host App (Onboarding + Settings) | ✅ Done | feat/SS-09-host-app-onboarding-settings |
 
 ### Execution Order (Respects Dependencies)
 
