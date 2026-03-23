@@ -109,7 +109,7 @@ See `scripture_share_feature_cards.docx` for full acceptance criteria and Claude
 | SS-05 | Translation Selector + User Default | ✅ Done | feat/SS-05-translation-selector |
 | SS-06 | Message Composition + iMessage Insert | ✅ Done | feat/SS-06-message-composition |
 | SS-07 | Recents List | ✅ Done | feat/SS-07-recents-list |
-| SS-08 | Keyword Search (FTS5) | Not Started | — |
+| SS-08 | Keyword Search (FTS5) | ✅ Done | feat/SS-08-keyword-search |
 | SS-09 | Host App (Onboarding + Settings) | Not Started | — |
 
 ### Execution Order (Respects Dependencies)
