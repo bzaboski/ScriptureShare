@@ -20,25 +20,20 @@ class MessagesViewController: MSMessagesAppViewController {
     override func didResignActive(with conversation: MSConversation) {}
 
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-        // Always request expanded for best UX, but keep interface intact.
-        if presentationStyle == .compact {
-            // Allow compact; interface still usable
-        }
+        // No special handling — interface works in both modes
     }
 
     // MARK: - Interface
 
     private func showMainInterface() {
-        // Request expanded mode for full browse/search UI
         requestPresentationStyle(.expanded)
 
-        // Remove existing host if present
         hostVC?.willMove(toParent: nil)
         hostVC?.view.removeFromSuperview()
         hostVC?.removeFromParent()
 
-        let mainView = MainTabView(onInsertVerse: { [weak self] verse in
-            self?.insertVerse(verse)
+        let mainView = MainTabView(onInsertText: { [weak self] text in
+            self?.insertPlainText(text)
         })
         let host = UIHostingController(rootView: AnyView(mainView))
         hostVC = host
@@ -49,17 +44,15 @@ class MessagesViewController: MSMessagesAppViewController {
         host.didMove(toParent: self)
     }
 
-    // MARK: - Verse Insertion
+    // MARK: - Plain Text Insert
 
-    /// Insert a verse as plain text into the active iMessage conversation.
+    /// Insert plain text into the active iMessage conversation.
     /// Works in both compact and expanded presentation modes.
-    func insertVerse(_ verse: Verse) {
-        let text = ShareService.shareText(for: verse)
-        activeConversation?.insertText(text) { [weak self] error in
+    private func insertPlainText(_ text: String) {
+        activeConversation?.insertText(text) { error in
             if let error = error {
                 print("ScriptureShare: insertText error — \(error)")
             }
-            // Stay in expanded mode; user can see the verse they shared
         }
     }
 }

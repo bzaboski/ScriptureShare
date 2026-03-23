@@ -11,10 +11,12 @@
 		0633F8186FCBD3224391A68D /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4732267D73EDF52DFBC1CD /* UserSettings.swift */; };
 		0F47FE5989563CC1D0654D2D /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DABBB20028A8CFA040FDA0 /* Messages.framework */; };
 		10A91201B7B2DF51C7D4A58E /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A92DA1D43061701A1B4F5 /* Verse.swift */; };
+		1538CA17599291CE2515F2B4 /* SS07RecentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A662F19D7D0071819201B1D /* SS07RecentsTests.swift */; };
 		1BDFD51FCDAC47D5C7E88D34 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A7496E1A37DBAF0EC2B924 /* ShareService.swift */; };
 		3101BC8AAF0BADBDAFC57F45 /* BibleDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF7E245BFA3399CAD98F43 /* BibleDatabase.swift */; };
 		448EF6E1BDC11E1B15BC840C /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B78CFAC5C11167BD35D38A /* BrowseView.swift */; };
 		4FEDC98D00E77FB9D1B4DF3A /* TranslationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4BF635182FC6381F98DFD /* TranslationPickerView.swift */; };
+		52B9970777C3154F2E7494D9 /* RecentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DED4E034C29EF436BD00449 /* RecentsService.swift */; };
 		580A8DAE5356F3D4A41C82B9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 173A83292B2F29D931F7214A /* libsqlite3.tbd */; };
 		5C6B07B86F678C1B073F0CED /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A77A7E1C44B6820A539C2 /* SearchView.swift */; };
 		5DF789D2EC3F5BD3BB7B2EFA /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E0EF58FEBFC9274896045 /* SearchService.swift */; };
@@ -43,6 +45,7 @@
 		EAFC5C14A22493783153F400 /* VerseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233679B1E35AF70A8184B299 /* VerseReference.swift */; };
 		F48BD61ECC416B27BCAE845E /* kjv.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CAC1C26166780E34EB6BD78B /* kjv.sqlite */; };
 		F9B5868FB74F317781C6364C /* ScriptureShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647B24C0EDA2762902A595B /* ScriptureShareApp.swift */; };
+		FEDC0F789DD1060C1088CF1A /* RecentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DED4E034C29EF436BD00449 /* RecentsService.swift */; };
 		FF3FB11B568534142B48186E /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95352D2CC6E8E519B94C2FF /* MessagesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A662F19D7D0071819201B1D /* SS07RecentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SS07RecentsTests.swift; sourceTree = "<group>"; };
 		16982BEE8E64469E9F6CAD56 /* RecentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsView.swift; sourceTree = "<group>"; };
 		173A83292B2F29D931F7214A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1CBF7E245BFA3399CAD98F43 /* BibleDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleDatabase.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 		54627CD5A519F4605C08683C /* VersePreviewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersePreviewCard.swift; sourceTree = "<group>"; };
 		684A77A7E1C44B6820A539C2 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		6C4732267D73EDF52DFBC1CD /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		6DED4E034C29EF436BD00449 /* RecentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsService.swift; sourceTree = "<group>"; };
 		7621952E11CCCCE1FC9FE644 /* DirectEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectEntryView.swift; sourceTree = "<group>"; };
 		77A7496E1A37DBAF0EC2B924 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
 		83E3B4E8A2CD396606C802C2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				1CBF7E245BFA3399CAD98F43 /* BibleDatabase.swift */,
+				6DED4E034C29EF436BD00449 /* RecentsService.swift */,
 				4D3E0EF58FEBFC9274896045 /* SearchService.swift */,
 				77A7496E1A37DBAF0EC2B924 /* ShareService.swift */,
 				5384C9606613EFB19875F94D /* VerseParser.swift */,
@@ -247,6 +253,7 @@
 			children = (
 				F4151EB7E60C8C14FE9DBB00 /* BibleDatabaseTests.swift */,
 				C6C01C32852EA16FD1ECA6AE /* SS02VerseParserTests.swift */,
+				0A662F19D7D0071819201B1D /* SS07RecentsTests.swift */,
 			);
 			path = ScriptureShareTests;
 			sourceTree = "<group>";
@@ -389,6 +396,7 @@
 			files = (
 				99A92C0B6464EA985A3EBF1F /* BibleDatabaseTests.swift in Sources */,
 				689941A3F483B885305561DA /* SS02VerseParserTests.swift in Sources */,
+				1538CA17599291CE2515F2B4 /* SS07RecentsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +407,7 @@
 				3101BC8AAF0BADBDAFC57F45 /* BibleDatabase.swift in Sources */,
 				98022DB92A6A74AA38D0CF41 /* Book.swift in Sources */,
 				D1B4FC9D1FC2646B1D7D7B53 /* OnboardingView.swift in Sources */,
+				FEDC0F789DD1060C1088CF1A /* RecentsService.swift in Sources */,
 				F9B5868FB74F317781C6364C /* ScriptureShareApp.swift in Sources */,
 				5DF789D2EC3F5BD3BB7B2EFA /* SearchService.swift in Sources */,
 				65DA204CDF5F3A6CE37E34D6 /* SettingsView.swift in Sources */,
@@ -421,6 +430,7 @@
 				65694734998E8C2C83E0989A /* DirectEntryView.swift in Sources */,
 				D38E9A1ECC56C64ADFDB52FA /* MainTabView.swift in Sources */,
 				FF3FB11B568534142B48186E /* MessagesViewController.swift in Sources */,
+				52B9970777C3154F2E7494D9 /* RecentsService.swift in Sources */,
 				CE570BBC641B17EA13B049DA /* RecentsView.swift in Sources */,
 				DAD0E642E1D6A881F72C6C26 /* SearchService.swift in Sources */,
 				5C6B07B86F678C1B073F0CED /* SearchView.swift in Sources */,
