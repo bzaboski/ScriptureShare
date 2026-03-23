@@ -108,11 +108,8 @@ struct DirectEntryView: View {
             } else if !rangeVerses.isEmpty {
                 // Range: composite preview card
                 RangePreviewCard(verses: rangeVerses, onShare: {
-                    if let first = rangeVerses.first {
-                        // Pass the first verse; sharing logic uses rangeVerses
-                        let composite = buildCompositeVerse(rangeVerses)
-                        onSelectVerse(composite)
-                    }
+                    let composite = buildCompositeVerse(rangeVerses)
+                    onSelectVerse(composite)
                 })
                 .padding()
             }
@@ -239,15 +236,19 @@ struct DirectEntryView: View {
     // MARK: - Composite Verse for Ranges
 
     private func buildCompositeVerse(_ verses: [Verse]) -> Verse {
-        guard let first = verses.first else {
+        guard let first = verses.first, let last = verses.last else {
             return Verse(id: 0, bookName: "", chapterNumber: 0, verseNumber: 0, text: "")
         }
-        let last = verses.last!
         let text = VerseParser.formatRange(verses)
-        let ref = "\(first.bookName) \(first.chapterNumber):\(first.verseNumber)-\(last.verseNumber)"
-        // Return a synthetic Verse with the formatted text
-        return Verse(id: first.id, bookName: first.bookName, chapterNumber: first.chapterNumber,
-                     verseNumber: first.verseNumber, text: text, translation: first.translation)
+        return Verse(
+            id: first.id,
+            bookName: first.bookName,
+            chapterNumber: first.chapterNumber,
+            verseNumber: first.verseNumber,
+            endVerseNumber: last.verseNumber,
+            text: text,
+            translation: first.translation
+        )
     }
 }
 
