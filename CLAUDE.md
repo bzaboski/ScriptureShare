@@ -105,7 +105,7 @@ See `scripture_share_feature_cards.docx` for full acceptance criteria and Claude
 | SS-01 | Project Scaffold + KJV Database Bundle | ✅ Done | feat/SS-01-project-scaffold |
 | SS-02 | Verse Lookup Layer + Reference Parser | ✅ Done | feat/SS-02-verse-lookup-reference-parser |
 | SS-03 | Browse Mode UI (Book → Chapter → Verse) | ✅ Done | feat/SS-03-browse-mode-ui |
-| SS-04 | Direct Entry Mode + Autocomplete | Not Started | — |
+| SS-04 | Direct Entry Mode + Autocomplete | ✅ Done | feat/SS-04-direct-entry-autocomplete |
 | SS-05 | Translation Selector + User Default | Not Started | — |
 | SS-06 | Message Composition + iMessage Insert | Not Started | — |
 | SS-07 | Recents List | Not Started | — |
