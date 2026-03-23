@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Scripture Share collects no user data and has no network activity. -->
+
+    <!-- Does this app use any third-party SDKs that track users? No. -->
+    <key>NSPrivacyTracking</key>
+    <false/>
+
+    <!-- No tracking domains — this app is 100% offline. -->
+    <key>NSPrivacyTrackingDomains</key>
+    <array/>
+
+    <!-- No user data is collected, stored off-device, or shared. -->
+    <key>NSPrivacyCollectedDataTypes</key>
+    <array/>
+
+    <!-- No privacy-sensitive system APIs are accessed. -->
+    <key>NSPrivacyAccessedAPITypes</key>
+    <array/>
+</dict>
+</plist>

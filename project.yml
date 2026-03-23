@@ -22,10 +22,15 @@ targets:
         excludes:
           - "**/*.entitlements"
       - path: Shared
+    resources:
+      - path: ScriptureShare/Assets.xcassets
+      - path: ScriptureShare/PrivacyInfo.xcprivacy
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.bzaboski.scriptureshare
         INFOPLIST_FILE: ScriptureShare/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        GENERATE_INFOPLIST_FILE: NO
     entitlements:
       path: ScriptureShare/ScriptureShare.entitlements
       properties:
@@ -45,10 +50,14 @@ targets:
         excludes:
           - "**/*.entitlements"
       - path: Shared
+    resources:
+      - path: ScriptureShareMessages/Assets.xcassets
+      - path: ScriptureShareMessages/PrivacyInfo.xcprivacy
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.bzaboski.scriptureshare.messages
         INFOPLIST_FILE: ScriptureShareMessages/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: "iMessage App Icon"
     entitlements:
       path: ScriptureShareMessages/ScriptureShareMessages.entitlements
       properties:
