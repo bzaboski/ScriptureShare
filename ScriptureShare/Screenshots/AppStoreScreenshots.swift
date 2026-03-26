@@ -364,7 +364,7 @@ private struct SharePreviewContent: View {
 #Preview("4 – Direct Entry") {
     ScreenshotFrame(
         headline: "Type Any\nReference",
-        subhead: "Just type "Psalm 23:1" and go — abbreviations work too",
+        subhead: "Just type 'Psalm 23:1' and go — abbreviations work too",
         gradientStart: Color(red: 0.60, green: 0.30, blue: 0.05),
         gradientEnd:   Color(red: 0.38, green: 0.16, blue: 0.02)
     ) {

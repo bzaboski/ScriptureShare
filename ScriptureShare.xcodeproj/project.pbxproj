@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03E9EF5EA59A6527F66E4E28 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4732267D73EDF52DFBC1CD /* UserSettings.swift */; };
+		41F8CC98D96548DF9834018B /* AppStoreScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B119809347729ED498DF /* AppStoreScreenshots.swift */; };
 		0633F8186FCBD3224391A68D /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4732267D73EDF52DFBC1CD /* UserSettings.swift */; };
 		0F47FE5989563CC1D0654D2D /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DABBB20028A8CFA040FDA0 /* Messages.framework */; };
 		10A91201B7B2DF51C7D4A58E /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55A92DA1D43061701A1B4F5 /* Verse.swift */; };
@@ -90,6 +91,7 @@
 		0A662F19D7D0071819201B1D /* SS07RecentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SS07RecentsTests.swift; sourceTree = "<group>"; };
 		16982BEE8E64469E9F6CAD56 /* RecentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsView.swift; sourceTree = "<group>"; };
 		173A83292B2F29D931F7214A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F6B0B119809347729ED498DF /* AppStoreScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreScreenshots.swift; sourceTree = "<group>"; };
 		1CBF7E245BFA3399CAD98F43 /* BibleDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleDatabase.swift; sourceTree = "<group>"; };
 		233679B1E35AF70A8184B299 /* VerseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseReference.swift; sourceTree = "<group>"; };
 		2647B24C0EDA2762902A595B /* ScriptureShareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureShareApp.swift; sourceTree = "<group>"; };
@@ -274,6 +276,14 @@
 			path = ScriptureShareTests;
 			sourceTree = "<group>";
 		};
+		64B84CCEA2EE457984094730 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B119809347729ED498DF /* AppStoreScreenshots.swift */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		FEE6C9D8F2B61F062A332C60 /* ScriptureShare */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +292,7 @@
 				D1FBD35DDDE658DF278B6202 /* PrivacyInfo.xcprivacy */,
 				2647B24C0EDA2762902A595B /* ScriptureShareApp.swift */,
 				6985CE2807649F20D91B5F6C /* Views */,
+				64B84CCEA2EE457984094730 /* Screenshots */,
 			);
 			path = ScriptureShare;
 			sourceTree = "<group>";
@@ -427,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F8CC98D96548DF9834018B /* AppStoreScreenshots.swift in Sources */,
 				3101BC8AAF0BADBDAFC57F45 /* BibleDatabase.swift in Sources */,
 				98022DB92A6A74AA38D0CF41 /* Book.swift in Sources */,
 				ED4C3A34E285F3135CE0D192 /* MainAppView.swift in Sources */,
