@@ -1,15 +1,25 @@
 import SwiftUI
+import SwiftData
 
 struct DirectEntryView: View {
     let onSelectVerse: (Verse) -> Void
+
+    @Query private var settingsResults: [UserSettings]
+    @Environment(\.modelContext) private var context
 
     @State private var reference = ""
     @State private var result: Verse?
     @State private var rangeVerses: [Verse] = []
     @State private var errorMessage: String?
     @State private var suggestions: [String] = []
+    @State private var isLoading = false
 
+    private let translationService = TranslationService.shared
     private let database = BibleDatabase()
+
+    private var currentTranslation: Translation {
+        settingsResults.first.map { Translation.from($0.preferredTranslation) } ?? .kjv
+    }
 
     /// All canonical book names for autocomplete
     private let allBookNames: [String] = {
@@ -53,11 +63,17 @@ struct DirectEntryView: View {
 
                 // Look Up button
                 Button(action: lookup) {
-                    Text("Look Up")
-                        .frame(maxWidth: .infinity)
+                    HStack(spacing: 6) {
+                        if isLoading {
+                            ProgressView()
+                                .controlSize(.small)
+                        }
+                        Text("Look Up")
+                    }
+                    .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(reference.trimmingCharacters(in: .whitespaces).isEmpty)
+                .disabled(reference.trimmingCharacters(in: .whitespaces).isEmpty || isLoading)
                 .padding(.horizontal)
             }
             .padding(.top, 12)
@@ -136,7 +152,6 @@ struct DirectEntryView: View {
         }
 
         // Try to detect if a book is already recognized (input has book + partial chapter:verse)
-        // Pattern: try to see if leading portion matches a book
         let bookRecognized = detectRecognizedBook(in: trimmed)
 
         if let (bookName, rest) = bookRecognized {
@@ -168,7 +183,7 @@ struct DirectEntryView: View {
     }
 
     private func buildChapterVerseSuggestions(bookName: String, rest: String) -> [String] {
-        let chapterCount = database.chapterCount(bookName: bookName)
+        let chapterCount = translationService.chapterCount(bookName: bookName)
         guard chapterCount > 0 else { return [] }
 
         // Parse rest to get partial chapter
@@ -215,8 +230,20 @@ struct DirectEntryView: View {
 
         suggestions = []
 
+        let translation = currentTranslation
+
+        if translation.isLocal {
+            // Synchronous KJV lookup
+            performLocalLookup(ref: ref)
+        } else {
+            // Async API lookup
+            performRemoteLookup(ref: ref, translation: translation)
+        }
+    }
+
+    /// KJV: synchronous database lookup.
+    private func performLocalLookup(ref: VerseReference) {
         if let endVerse = ref.endVerse {
-            // Range lookup
             let verses = database.verses(bookName: ref.bookName, chapter: ref.chapter, from: ref.verse, through: endVerse)
             if verses.isEmpty {
                 errorMessage = "Verse range not found: \(ref.displayString)."
@@ -224,11 +251,60 @@ struct DirectEntryView: View {
                 rangeVerses = verses
             }
         } else {
-            // Single verse lookup
             if let verse = database.verse(bookName: ref.bookName, chapter: ref.chapter, verse: ref.verse) {
                 result = verse
             } else {
                 errorMessage = "Verse not found: \(ref.displayString)."
+            }
+        }
+    }
+
+    /// ESV/NLT: async API lookup with loading state.
+    private func performRemoteLookup(ref: VerseReference, translation: Translation) {
+        isLoading = true
+        Task {
+            do {
+                if let endVerse = ref.endVerse {
+                    let verses = try await translationService.verseRange(
+                        book: ref.bookName,
+                        chapter: ref.chapter,
+                        from: ref.verse,
+                        through: endVerse,
+                        translation: translation
+                    )
+                    await MainActor.run {
+                        isLoading = false
+                        if verses.isEmpty {
+                            errorMessage = "Verse range not found: \(ref.displayString)."
+                        } else {
+                            rangeVerses = verses
+                        }
+                    }
+                } else {
+                    let verse = try await translationService.verse(
+                        book: ref.bookName,
+                        chapter: ref.chapter,
+                        verse: ref.verse,
+                        translation: translation
+                    )
+                    await MainActor.run {
+                        isLoading = false
+                        if let verse = verse {
+                            result = verse
+                        } else {
+                            errorMessage = "Verse not found: \(ref.displayString)."
+                        }
+                    }
+                }
+            } catch {
+                await MainActor.run {
+                    isLoading = false
+                    if let tsError = error as? TranslationServiceError, tsError.isOffline {
+                        errorMessage = "Offline — switch to KJV for offline access."
+                    } else {
+                        errorMessage = error.localizedDescription
+                    }
+                }
             }
         }
     }
@@ -270,6 +346,11 @@ struct RangePreviewCard: View {
         VerseParser.formatRange(verses)
     }
 
+    private var attributionText: String {
+        guard let f = first else { return "(KJV)" }
+        return CopyrightService.sharingAttribution(for: Translation.from(f.translation))
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(formattedText)
@@ -277,7 +358,7 @@ struct RangePreviewCard: View {
                 .italic()
 
             HStack {
-                Text("— \(referenceString) (\(first?.translation ?? "KJV"))")
+                Text("— \(referenceString) \(attributionText)")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()

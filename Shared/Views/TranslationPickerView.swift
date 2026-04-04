@@ -22,26 +22,48 @@ public struct TranslationPickerView: View {
     public var body: some View {
         NavigationStack {
             List {
-                ForEach(UserSettings.availableTranslations, id: \.self) { translation in
-                    HStack {
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(translation)
-                                .font(.body.weight(.medium))
-                            Text(subtitleForTranslation(translation))
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
+                Section {
+                    ForEach(Translation.allCases) { translation in
+                        HStack {
+                            VStack(alignment: .leading, spacing: 2) {
+                                HStack(spacing: 6) {
+                                    Text(translation.displayName)
+                                        .font(.body.weight(.medium))
+                                    if !translation.isLocal && !translation.isAvailable {
+                                        Image(systemName: "key")
+                                            .font(.caption2)
+                                            .foregroundStyle(.orange)
+                                    }
+                                    if !translation.isLocal {
+                                        Image(systemName: "cloud")
+                                            .font(.caption2)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                }
+                                Text(translation.fullName)
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            Spacer()
+                            if settings.preferredTranslation == translation.rawValue {
+                                Image(systemName: "checkmark")
+                                    .foregroundStyle(Color.accentColor)
+                                    .fontWeight(.semibold)
+                            }
                         }
-                        Spacer()
-                        if settings.preferredTranslation == translation {
-                            Image(systemName: "checkmark")
-                                .foregroundStyle(Color.accentColor)
-                                .fontWeight(.semibold)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            if translation.isAvailable {
+                                settings.preferredTranslation = translation.rawValue
+                                dismiss()
+                            }
                         }
+                        .opacity(translation.isAvailable ? 1.0 : 0.5)
                     }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        settings.preferredTranslation = translation
-                        dismiss()
+                } footer: {
+                    if Translation.allCases.contains(where: { !$0.isAvailable }) {
+                        Text("Translations marked with a key icon require an API key. Configure keys in APIConfig.swift.")
+                            .font(.caption2)
                     }
                 }
             }
@@ -52,15 +74,6 @@ public struct TranslationPickerView: View {
                     Button("Done") { dismiss() }
                 }
             }
-        }
-    }
-
-    private func subtitleForTranslation(_ translation: String) -> String {
-        switch translation {
-        case "KJV": return "King James Version (1611)"
-        case "ESV": return "English Standard Version"
-        case "NLT": return "New Living Translation"
-        default:    return translation
         }
     }
 }

@@ -29,3 +29,6 @@ Pods/
 
 # Scripts (used for DB setup only)
 populate_kjv.py
+
+# API keys (user fills in locally)
+Shared/Services/APIConfig.swift

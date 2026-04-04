@@ -80,11 +80,13 @@ struct MainTabView: View {
     // MARK: - Share Handler
 
     private func handleShare(_ verse: Verse) {
-        // 1. Format the text
+        // 1. Format the text with proper copyright attribution
         let text = ShareService.shareText(for: verse)
 
-        // 2. Save to recents (use the base verse ID for non-composite verses)
-        RecentsService.addRecent(verseID: verse.id, to: settings)
+        // 2. Save to recents (only for KJV — API verses have synthetic IDs)
+        if Translation.from(verse.translation).isLocal {
+            RecentsService.addRecent(verseID: verse.id, to: settings)
+        }
 
         // 3. Insert into iMessage
         onInsertText(text)

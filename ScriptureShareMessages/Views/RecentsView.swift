@@ -52,9 +52,14 @@ struct RecentsView: View {
                         Text(verse.text)
                             .font(.body)
                             .lineLimit(2)
-                        Text(verse.reference)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
+                        HStack(spacing: 4) {
+                            Text(verse.reference)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Text(CopyrightService.sharingAttribution(for: Translation.from(verse.translation)))
+                                .font(.caption2)
+                                .foregroundStyle(.tertiary)
+                        }
                     }
                     .contentShape(Rectangle())
                     .onTapGesture { selectedVerse = verse }
@@ -71,6 +76,8 @@ struct RecentsView: View {
     }
 
     private func loadVerses(ids: [Int]) {
+        // Recents stores SQLite row IDs — these are KJV-only.
+        // Future: could store translation + reference for cross-translation recents.
         recentVerses = ids.compactMap { database.verse(id: $0) }
     }
 }

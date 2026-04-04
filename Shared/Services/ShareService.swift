@@ -7,7 +7,10 @@ public struct ShareService {
     /// Format a single verse for insertion into iMessage.
     /// Format: verse text + newline + '— Reference (Translation)'
     public static func shareText(for verse: Verse) -> String {
-        "\"\(verse.text)\"\n— \(verse.reference) (\(verse.translation))"
+        let attribution = CopyrightService.sharingAttribution(
+            for: Translation.from(verse.translation)
+        )
+        return "\"\(verse.text)\"\n— \(verse.reference) \(attribution)"
     }
 
     /// Format a verse range for insertion into iMessage.
@@ -20,6 +23,9 @@ public struct ShareService {
         }
         let rangeText = VerseParser.formatRange(verses)
         let reference = "\(first.bookName) \(first.chapterNumber):\(first.verseNumber)-\(last.verseNumber)"
-        return "\"\(rangeText)\"\n— \(reference) (\(first.translation))"
+        let attribution = CopyrightService.sharingAttribution(
+            for: Translation.from(first.translation)
+        )
+        return "\"\(rangeText)\"\n— \(reference) \(attribution)"
     }
 }

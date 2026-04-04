@@ -73,6 +73,20 @@ struct SettingsView: View {
                 }
             }
 
+            // MARK: - Copyright Notices
+            Section("Copyright Notices") {
+                ForEach(CopyrightService.allAttributions(), id: \.translation) { item in
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(item.translation.fullName)
+                            .font(.subheadline.weight(.medium))
+                        Text(item.text)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(.vertical, 2)
+                }
+            }
+
             // MARK: - About
             Section("About") {
                 HStack {
@@ -92,7 +106,7 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Scripture Share")
                         .font(.body.weight(.medium))
-                    Text("Search and share King James Bible verses directly in iMessage conversations. Fully offline — no account required.")
+                    Text("Search and share Bible verses directly in iMessage conversations. KJV is fully offline. ESV and NLT require an internet connection.")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }

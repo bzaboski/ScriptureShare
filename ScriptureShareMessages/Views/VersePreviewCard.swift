@@ -4,6 +4,10 @@ struct VersePreviewCard: View {
     let verse: Verse
     let onShare: () -> Void
 
+    private var attributionText: String {
+        CopyrightService.sharingAttribution(for: Translation.from(verse.translation))
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(verse.text)
@@ -11,7 +15,7 @@ struct VersePreviewCard: View {
                 .italic()
 
             HStack {
-                Text("— \(verse.reference) (\(verse.translation))")
+                Text("— \(verse.reference) \(attributionText)")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()
