@@ -43,6 +43,7 @@ def fetch_nlt_passage(reference: str) -> dict | None:
 
     try:
         req = urllib.request.Request(url)
+        req.add_header('User-Agent', 'ScriptureShare/1.0')
         with urllib.request.urlopen(req) as response:
             raw_html = response.read().decode()
             # Extract text from HTML response

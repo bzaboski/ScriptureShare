@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02BC146FF0AD0A3A9F75A29F /* esv_popular_cache.json in Resources */ = {isa = PBXBuildFile; fileRef = B181E79A1A8D1821C1BC5319 /* esv_popular_cache.json */; };
 		03E9EF5EA59A6527F66E4E28 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4732267D73EDF52DFBC1CD /* UserSettings.swift */; };
 		05E82CD03144395EC29648A2 /* CopyrightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D9897A873256135908E62 /* CopyrightService.swift */; };
 		0633F8186FCBD3224391A68D /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4732267D73EDF52DFBC1CD /* UserSettings.swift */; };
@@ -15,8 +16,10 @@
 		11CE4D37F47C019C217B39FD /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336A93A23507501F62D4043 /* TranslationService.swift */; };
 		1492B5CDFA8F0FAC63C577F9 /* VerseCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9719DBC1DD34BB4DF7D96F3B /* VerseCache.swift */; };
 		1538CA17599291CE2515F2B4 /* SS07RecentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A662F19D7D0071819201B1D /* SS07RecentsTests.swift */; };
+		15D718AAC525AF13287C46E5 /* nlt_popular_cache.json in Resources */ = {isa = PBXBuildFile; fileRef = 08A578C6364BAF6AFFE8285C /* nlt_popular_cache.json */; };
 		1BB3A4C7CB534E3231184E12 /* NLTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C43AA0D984817E70DBAF4 /* NLTService.swift */; };
 		1BDFD51FCDAC47D5C7E88D34 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A7496E1A37DBAF0EC2B924 /* ShareService.swift */; };
+		2F4BB960D0EFDA8F54C5343D /* esv_popular_cache.json in Resources */ = {isa = PBXBuildFile; fileRef = B181E79A1A8D1821C1BC5319 /* esv_popular_cache.json */; };
 		2F776455003D3EFD1F9C72AC /* popular_verses.json in Resources */ = {isa = PBXBuildFile; fileRef = 237758A8816BAD8489C455B0 /* popular_verses.json */; };
 		3101BC8AAF0BADBDAFC57F45 /* BibleDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF7E245BFA3399CAD98F43 /* BibleDatabase.swift */; };
 		325D57715FFDD62EF84246AC /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E54B10EEA3BFC0FEFA61A /* APIConfig.swift */; };
@@ -33,6 +36,7 @@
 		5C6B07B86F678C1B073F0CED /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A77A7E1C44B6820A539C2 /* SearchView.swift */; };
 		5DF789D2EC3F5BD3BB7B2EFA /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3E0EF58FEBFC9274896045 /* SearchService.swift */; };
 		5F22F115453F77F1A02E7FE3 /* BibleDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF7E245BFA3399CAD98F43 /* BibleDatabase.swift */; };
+		6022C69254B55178C7CFBB33 /* nlt_popular_cache.json in Resources */ = {isa = PBXBuildFile; fileRef = 08A578C6364BAF6AFFE8285C /* nlt_popular_cache.json */; };
 		6322D988A165EB2748580F2E /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C0914A8A1C37A11B612EB /* ESVService.swift */; };
 		64B6BB0F968D4869C8ABD5B2 /* popular_verses.json in Resources */ = {isa = PBXBuildFile; fileRef = 237758A8816BAD8489C455B0 /* popular_verses.json */; };
 		65694734998E8C2C83E0989A /* DirectEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7621952E11CCCCE1FC9FE644 /* DirectEntryView.swift */; };
@@ -107,6 +111,7 @@
 
 /* Begin PBXFileReference section */
 		0336A93A23507501F62D4043 /* TranslationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
+		08A578C6364BAF6AFFE8285C /* nlt_popular_cache.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = nlt_popular_cache.json; sourceTree = "<group>"; };
 		0A662F19D7D0071819201B1D /* SS07RecentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SS07RecentsTests.swift; sourceTree = "<group>"; };
 		16982BEE8E64469E9F6CAD56 /* RecentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsView.swift; sourceTree = "<group>"; };
 		173A83292B2F29D931F7214A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -135,6 +140,7 @@
 		9EAE3A2704C7F8DC6C5C86F2 /* ScriptureShareTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ScriptureShareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68D9897A873256135908E62 /* CopyrightService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CopyrightService.swift; sourceTree = "<group>"; };
 		B0859C5ADB064B86703BB87B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B181E79A1A8D1821C1BC5319 /* esv_popular_cache.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = esv_popular_cache.json; sourceTree = "<group>"; };
 		B36E54B10EEA3BFC0FEFA61A /* APIConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		B7C16F6E2B6185DC20185DE2 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		C55A92DA1D43061701A1B4F5 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
@@ -198,6 +204,8 @@
 			children = (
 				CAC1C26166780E34EB6BD78B /* kjv.sqlite */,
 				237758A8816BAD8489C455B0 /* popular_verses.json */,
+				B181E79A1A8D1821C1BC5319 /* esv_popular_cache.json */,
+				08A578C6364BAF6AFFE8285C /* nlt_popular_cache.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -438,6 +446,8 @@
 				5A63400691B79452B8934805 /* PrivacyInfo.xcprivacy in Resources */,
 				8152250E76B07463369359B4 /* kjv.sqlite in Resources */,
 				64B6BB0F968D4869C8ABD5B2 /* popular_verses.json in Resources */,
+				2F4BB960D0EFDA8F54C5343D /* esv_popular_cache.json in Resources */,
+				15D718AAC525AF13287C46E5 /* nlt_popular_cache.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +459,8 @@
 				C181BFFFF9B82A495C57508C /* PrivacyInfo.xcprivacy in Resources */,
 				F48BD61ECC416B27BCAE845E /* kjv.sqlite in Resources */,
 				2F776455003D3EFD1F9C72AC /* popular_verses.json in Resources */,
+				02BC146FF0AD0A3A9F75A29F /* esv_popular_cache.json in Resources */,
+				6022C69254B55178C7CFBB33 /* nlt_popular_cache.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
